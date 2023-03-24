@@ -436,12 +436,14 @@ section.me ul.list ul.in li p::before {
 /*section.sns start*/
 section.sns {
     /*background: orange;*/
+    margin-bottom: 60px;
     margin: 80px 0;
 }
 
 section.sns .sub-container {
     /*background: royalblue;*/
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 30px;
 }
@@ -450,20 +452,23 @@ section.sns .sub-container li {
     box-sizing: border-box;
     width: 33.3333%;
     height: 510px;
+    overflow: hidden;
 }
 section.sns .sub-container li .img-box {
     overflow: hidden;
-    height: 50%;
+    max-height: 220px;
+    overflow: hidden;
     margin: 10px;
     position: relative;
     
 }
 section.sns .sub-container li .img-box img {
     width: 100%;
+    overflow: hidden;
     margin-bottom: 10px;
     transition: 0.6s;
 }
-section.sns .sub-container li .img-box::after{
+section.sns .sub-container li .img-box::before{
     content: '';
     width: 0;
     height: 100%;
@@ -475,10 +480,10 @@ section.sns .sub-container li .img-box::after{
     transition: 0.3s;
     z-index: 9999;
 }
-section.sns .sub-container li .img-box:hover::after {
+section.sns .sub-container li .img-box:hover::before {
     width: 100%;
 }
-section.sns .sub-container li .img-box::before {
+section.sns .sub-container li .img-box::after{
     content: 'BLOG';
     width: 70px;
     font-size: 15px;
@@ -494,11 +499,12 @@ section.sns .sub-container li .img-box::before {
     margin: 0 auto;
     opacity: 0;
 }
-section.sns .sub-container li .img-box:hover::before {
+section.sns .sub-container li .img-box:hover::after {
     opacity: 1;
 }
 section.sns ul li a .bottom {
-    padding: 30px;
+    padding: 20px 0 20px 30px;
+    box-sizing: border-box;
 }
 section.sns ul li a .bottom .color {
     font-size: 20px;
@@ -512,4 +518,179 @@ section.sns ul li a .bottom p {
 section.sns ul li a .bottom .time {
     color: gray;
     font-size: 13px;
+    margin-top: 30px;
 }
+section.sns ul li a .bottom p.time i {
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+/*footer style*/
+footer {
+    border-top: 1px solid #999;
+    padding: 30px 0;
+}
+
+footer .inner {
+    width: 84%;
+    margin: 0 auto;
+}
+
+footer .inner .ft-logo {
+    float: left;
+    width: 14%;
+}
+
+footer .inner .ft-logo img {
+    width: 100%;
+}
+
+footer .inner .address {
+    float: left;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+footer .inner .address li:first-child {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+footer .inner .address li:last-child {
+    color: #999;
+}
+
+footer .inner .list {
+    float: right;
+    margin-top: 20px;
+}
+footer .inner .list li {
+    float: left;
+    margin-left: 80px;
+}
+
+footer .inner .list li:last-child {
+    font-weight: 700;
+}
+
+footer .inner .list li a:hover {
+    color: #f76590;
+    text-decoration: underline;
+}
+/*반응형 웹 디자인*/
+/*노트북 해상도 1600px 미만*/
+@media screen and (max-width: 1599px) {
+    header .inner-header nav {
+        display: none;
+    }
+
+    header .inner-header .gnb-mobile {
+        display: block;
+        float: right;
+        font-size: 40px;
+        color: #fff;
+    }
+    section.main .main-title h2 {
+        font-size: 35px;
+    }
+    section.main .main-title h3 {
+        font-size: 18px;
+    }
+    section.main .main-title {
+        font-size: 12px;
+    }
+    section.main ul li .img-box {
+        max-height: 170px;
+    }
+    footer .inner .ft-logo {
+
+    }
+} 
+
+
+/*태블릿 1024px 이하 해상도 (아이패드 프로)*/
+
+@media  screen and (max-width: 1024px) {
+    section.me ul.list > li .more span {
+        font-size: 80px;
+    }
+    header .inner-header, section .sub-container, footer .inner {
+
+    }
+    section .inner .bottom p {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    section.sns .sub-container li .img-box {
+        max-height: 130px;
+    }
+    section.me ul.list > li .more span  {
+        left: -30px;
+    }
+    section.me ul.list li p {
+        display: block;
+    }
+}
+/*태블릿 768px 이하 해상도 (아이패드 미니)*/
+@media screen and (max-width: 768px) {
+    section .inner .bottom p {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+    section .inner .en {
+        text-align: center;
+    }
+    section.about .sub-container li {
+        float: none;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+    section.sns .sub-container li .img-box {
+        max-height: 100px;
+
+    }
+    section.innovation .img-box .inner .bottom p {
+        float: none;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    section.innovaion .img-box .inner .bottom a {
+
+    }
+
+    footer .inner ul {
+        float: left;
+        font-size: 10px;
+        margin-left: -50px;
+    }
+}
+
+/*태블릿 414px 이하 해상도 (아이폰 6/7/8 plus)*/
+@media screen and (max-width: 414px) {
+
+    header .inner-header .logo img {
+        width: 100px;
+        margin-bottom: 30px;
+    }
+    header {
+        height: 7%;
+    }
+    header .inner-header .gnb-mobile {
+        font-size: 25px;
+        margin-top: -15px;
+    }
+    section.main .main-title .en {
+        font-size: 28px;
+    }
+    section.main .main-title p {
+        font-size: 15px;
+    }
+    section.main .main-title a {
+        font-size: 14px;
+        height: 40px;
+    }
+    br.mo {
+        display: block;
+    }
+}
+
